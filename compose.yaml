@@ -1,0 +1,16 @@
+services:
+  vending:
+    build: .
+    ports: ["18105:18105"]
+    environment:
+      PORT: 18105
+      VENDING_API_KEY: ${VENDING_API_KEY:-zhuatech-demo-key}
+      VENDING_DATA_FILE: /app/data/vending.json
+    volumes: ["vending-data:/app/data"]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:18105/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+volumes:
+  vending-data:

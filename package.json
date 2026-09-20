@@ -1,0 +1,14 @@
+{
+  "name": "@zhuatech/vending",
+  "version": "1.0.0",
+  "private": true,
+  "description": "知华无人零售与智能售货机平台社区版",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "check": "node --check src/domain.js && node --check src/server.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "LicenseRef-ZhuaTech-NonCommercial-1.0"
+}
